@@ -1,0 +1,54 @@
+@import '~css/base';
+
+.home {
+  padding-top: rem($global-padding * 3);
+
+  &__el {
+    color: red;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  margin: 0 auto rem($global-padding * 2);
+
+  max-width: rem(950px);
+
+  padding: 0 rem($global-padding);
+
+  &.grey {
+    background-color: #e5e5e5;
+  }
+
+  p {
+    @include bodyFont;
+
+    width: 60%;
+  }
+
+  .info {
+    @include codeFont;
+
+    position: absolute;
+
+    top: 0;
+    right: rem($global-padding);
+
+    color: #ccc;
+
+    text-align: right;
+  }
+}
+
+
+h5 {
+  @include headlineFont;
+  @include font-size-small;
+
+  padding: 0;
+  margin: 0;
+
+  text-transform: uppercase;
+  letter-spacing: rem(1px);
+}

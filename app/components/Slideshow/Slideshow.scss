@@ -1,0 +1,95 @@
+@import '~css/base';
+
+.slideshow {
+  position: relative;
+
+  width: 100%;
+  padding-bottom: 70.67%;
+
+  margin-bottom: rem($global-padding / 2);
+
+  height: 0;
+
+  &__content {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: {
+      size: cover;
+      repeat: no-repeat;
+      position: center;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.slideshow-info {
+  display: flex;
+
+  width: 100%;
+
+  &__info,
+  &__quick {
+
+    z-index: 5;
+
+    flex-basis: 50%;
+
+    padding: rem($global-padding / 2) 0;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  em {
+    display: block;
+  }
+
+  &__info button {
+    font-weight: bold;
+  }
+
+  &__quick {
+    right: 0;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-end;
+
+    ul {
+      display: flex;
+
+      flex-direction: column;
+      align-items: flex-end;
+
+      padding: 0;
+      margin: 0;
+
+      list-style: none;
+    }
+
+    li {
+      margin-left: rem($global-padding / 2);
+    }
+  }
+}

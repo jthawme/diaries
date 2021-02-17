@@ -1,0 +1,29 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function rem($size) {
+  $remSize: strip-unit($size) / 16;
+  @return #{$remSize}rem;
+}
+
+$global-gutter: 20px;
+$global-padding: 32px;
+
+@function column-width($cols, $total: 12) {
+  $unit: (100%  / $total) ;
+  @return calc((#{$unit * $cols} - #{$gutter} ) + ( #{$gutter} / #{$total / $cols}));
+}
+
+@mixin columns($cols, $total: 12) {
+  min-width: column-width($cols, $total);
+  margin-right: $gutter;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
